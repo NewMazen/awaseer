@@ -1,0 +1,7 @@
+{
+  "name": "Awaseer",
+  "description": "بوابة عائلة محي الدين مليباري - أواصر، صلة وفاء ونماء.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

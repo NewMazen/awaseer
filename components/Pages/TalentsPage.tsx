@@ -88,7 +88,7 @@ export const TalentsPage: React.FC<{ data: AppData }> = ({ data }) => {
       <div className="pt-32 md:pt-40 container mx-auto px-2 md:px-6 mb-40 text-right transition-colors" dir="rtl">
         <SectionHeader 
           title="مواهبنا الإبداعية" 
-          subtitle="منصة تجمع الفن، الشعر، والفكر لإبداعات متميزة لذرية محي الدين مليباري." 
+          subtitle="منصة تجمع الفنون، الشعر، والفكر لإبداعات العائلة المتميزة." 
         />
         
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">

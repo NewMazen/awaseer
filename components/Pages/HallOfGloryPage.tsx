@@ -127,7 +127,7 @@ export const HallOfGloryPage: React.FC<{ data: AppData }> = ({ data }) => {
         </button>
       </div>
       <div className="pt-40 container mx-auto px-6 mb-40 text-right" dir="rtl">
-        <SectionHeader title="لوحة المجد" subtitle="سجل الفخر لذرية محي الدين مليباري، حيث تخلد الإنجازات وتكرم الهمم العالية." />
+        <SectionHeader title="لوحة المجد" subtitle="هــنا حـيث تخــلد الإنجــازات وتكـرم الهـمم العاليـة" />
         <GlorySection title="سدنة العلم: الدكاترة" watermark="PHD" theme="gold" tag="ELITE" achievements={filter(AchievementType.PHD)} description="نحتفي بكوكبة النخبة الذين ارتقوا في درجات العلم ليكونوا منارات هدى وفخر للعائلة." icon="🎓" />
         <GlorySection title="فرسان المعرفة: الماجستير" watermark="MA" theme="silver" tag="SCHOLAR" achievements={filter(AchievementType.MASTERS)} description="جدارة أكاديمية متميزة تجسد طموح العائلة المتجدد." icon="📜" />
         <GlorySection title="سفراء العلم: البكالوريوس" watermark="BA" theme="bronze" tag="GRAD" achievements={filter(AchievementType.BACHELORS)} description="بكل فخر نهنئ أبناءنا خريجي الجامعات." icon="🎖️" />

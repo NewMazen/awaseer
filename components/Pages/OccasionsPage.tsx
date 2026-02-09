@@ -14,8 +14,8 @@ export const OccasionsPage: React.FC<{ data: AppData }> = ({ data }) => {
     <PageTransition>
       <div className="pt-40 container mx-auto px-6 mb-40 text-right" dir="rtl">
         <SectionHeader 
-          title="أخبار المجتمع" 
-          subtitle="نشارككم أفراح العائلة وسلامتها بتنسيق أنيق ومريح للعين." 
+          title="أخبار العائلة" 
+          subtitle="في الحـلوة والمـرة نشارككـــم أخبـــار العائلــة" 
         />
         
         {/* قسم السلامة - العنوان ديناميكي الآن */}
@@ -80,9 +80,14 @@ export const OccasionsPage: React.FC<{ data: AppData }> = ({ data }) => {
 
         {/* بقية الأقسام (عرسان، مواليد) */}
         <section className="mb-32">
-          <div className="flex items-center gap-6 mb-12">
-            <h2 className="text-3xl font-black text-amber-600 whitespace-nowrap">💍 عرسان السنة</h2>
-            <div className="h-[1px] bg-amber-200 dark:bg-amber-900/30 flex-grow"></div>
+          <div className="flex flex-col mb-12">
+            <div className="flex items-center gap-6">
+              <h2 className="text-3xl font-black text-amber-600 whitespace-nowrap">💍 عرسان السنة</h2>
+              <div className="h-[1px] bg-amber-200 dark:bg-amber-900/30 flex-grow"></div>
+            </div>
+            <p className="text-amber-700 dark:text-amber-500 font-bold mt-3 text-lg">
+              بارك الله لكما وبارك عليكما وجمع بينكما في خير
+            </p>
           </div>
 
           {newlyweds.length > 0 ? (
@@ -111,9 +116,14 @@ export const OccasionsPage: React.FC<{ data: AppData }> = ({ data }) => {
         </section>
 
         <section>
-          <div className="flex items-center gap-6 mb-12">
-            <h2 className="text-3xl font-black text-emerald-700 dark:text-emerald-400 whitespace-nowrap">👶 مواليد السنة</h2>
-            <div className="h-[1px] bg-emerald-200 dark:bg-emerald-900/30 flex-grow"></div>
+          <div className="flex flex-col mb-12">
+            <div className="flex items-center gap-6">
+              <h2 className="text-3xl font-black text-emerald-700 dark:text-emerald-400 whitespace-nowrap">👶 مواليد السنة</h2>
+              <div className="h-[1px] bg-emerald-200 dark:bg-emerald-900/30 flex-grow"></div>
+            </div>
+            <p className="text-emerald-700 dark:text-emerald-500 font-bold mt-3 text-lg">
+              بارك الله لكم في الموهوب وشكرتم الواهب وبلغ أشده ورزقتم بره
+            </p>
           </div>
           
           {newborns.length > 0 ? (

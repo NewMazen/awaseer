@@ -98,15 +98,19 @@ export const OccasionsPage: React.FC<{ data: AppData }> = ({ data }) => {
                   className="group bg-white dark:bg-slate-900 rounded-[3rem] overflow-hidden shadow-lg border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all cursor-pointer"
                   onClick={() => couple.image && setSelectedImage(couple.image)}
                 >
-                  <div className="relative aspect-video overflow-hidden bg-slate-100 dark:bg-slate-950">
+                 <div className="relative aspect-video overflow-hidden bg-slate-100 dark:bg-slate-950">
                     <img 
                       src={couple.image || 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8'} 
                       className="w-full h-full object-contain md:object-cover transition-transform duration-1000 group-hover:scale-105" 
                       alt={couple.names} 
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
-                    <div className="absolute bottom-6 right-8">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-70"></div>
+                    <div className="absolute bottom-6 right-8 text-right">
                        <h3 className="text-2xl font-black text-white drop-shadow-lg">{couple.names}</h3>
+                       <p className="text-amber-400 font-bold text-sm mt-1 flex items-center gap-2 justify-end">
+                         <span>📅</span>
+                         <span>{couple.date}</span>
+                       </p>
                     </div>
                   </div>
                 </div>
@@ -144,6 +148,10 @@ export const OccasionsPage: React.FC<{ data: AppData }> = ({ data }) => {
                   <div className="text-right overflow-hidden">
                     <h3 className="text-xl font-black text-slate-900 dark:text-white truncate">{baby.name}</h3>
                     <p className="text-slate-500 text-xs font-bold mb-3 truncate">ابن/ابنة: {baby.parents}</p>
+                    <div className="inline-flex items-center gap-1.5 bg-emerald-50 dark:bg-emerald-900/20 px-3 py-1 rounded-full text-[10px] font-black text-emerald-600 dark:text-emerald-400">
+                      <span>📅</span>
+                      <span>{baby.date}</span>
+                    </div>
                   </div>
                 </div>
               ))}

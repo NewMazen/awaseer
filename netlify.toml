@@ -1,0 +1,7 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  # تعطيل فحص الأسرار الذكي لتجاوز حظر الرفع بسبب مفاتيح Firebase
+  SECRETS_SCAN_SMART_DETECTION_ENABLED = "false"

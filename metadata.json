@@ -1,0 +1,7 @@
+{
+  "name": "Awaseer",
+  "description": "بوابة عائلة علي أحمد مليباري - أواصر، صلة وفاء ونماء.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

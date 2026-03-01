@@ -129,6 +129,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ data, onSave, on
           <div className="flex lg:flex-col gap-2 md:gap-3 overflow-x-auto pb-4 lg:pb-0 sticky lg:top-40 h-fit z-40 no-scrollbar">
             {[
               { id: 'general', label: 'الأساسية', icon: '⚙️' },
+              { id: 'story', label: 'عن العائلة', icon: '📖' },
               { id: 'tree', label: 'إدارة الشجرة', icon: '🌳' },
               { id: 'occasions', label: 'الأخبار', icon: '💍' },
               { id: 'glory', label: 'لوحة المجد', icon: '🎓' },

@@ -44,37 +44,65 @@ export const QisaMaarad: React.FC<Props> = ({ formData, updateField }) => {
 
   return (
     <div className="space-y-8 animate-in fade-in" dir="rtl">
-      <h2 className="text-2xl font-black text-amber-600 border-b pb-4">قصة العدد والمعرض</h2>
-      <div className="grid md:grid-cols-2 gap-6">
+      <h2 className="text-2xl font-black text-amber-600 border-b pb-4">إدارة قسم عن العائلة</h2>
+      
+      {/* نشأة العائلة */}
+      <section className="space-y-4 bg-slate-50 dark:bg-slate-800/40 p-6 rounded-3xl border border-slate-100 dark:border-slate-700">
+        <h3 className="text-lg font-black text-slate-700 dark:text-white flex items-center gap-2">
+          📜 نشأة العائلة (سيرة المؤسس)
+        </h3>
         <div className="space-y-4">
+          <ImagePicker label="صورة المؤسس" value={formData.founderImage} onChange={v => updateField('founderImage', v)} />
           <div className="space-y-1">
-            <label className="block text-xs font-black text-slate-400 mr-2">عنوان القصة</label>
-            <input 
-              type="text" 
-              value={formData.featuredStoryTitle} 
-              onChange={e => updateField('featuredStoryTitle', e.target.value)} 
-              className="w-full bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white p-4 rounded-2xl border border-slate-100 dark:border-slate-700 outline-none focus:border-amber-500 transition-colors" 
+            <label className="block text-xs font-black text-slate-400 mr-2">نص نشأة العائلة</label>
+            <textarea 
+              rows={5} 
+              value={formData.founderBio} 
+              onChange={e => updateField('founderBio', e.target.value)} 
+              className="w-full bg-white dark:bg-slate-900 text-slate-900 dark:text-white p-4 rounded-2xl border border-slate-100 dark:border-slate-700 outline-none focus:border-amber-500 transition-colors" 
+              placeholder="اكتب هنا تاريخ ونشأة العائلة..." 
             />
           </div>
-          <VideoPicker 
-            label="فيديو القصة (رفع أو رابط)" 
-            value={formData.featuredYouTubeUrl || ''} 
-            onChange={v => updateField('featuredYouTubeUrl', v)} 
+        </div>
+      </section>
+
+      {/* قصة العدد */}
+      <section className="space-y-6">
+        <h3 className="text-lg font-black text-slate-700 dark:text-white flex items-center gap-2">
+          📖 قصة العدد ومقطع السنة
+        </h3>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="space-y-4">
+            <div className="space-y-1">
+              <label className="block text-xs font-black text-slate-400 mr-2">عنوان القصة</label>
+              <input 
+                type="text" 
+                value={formData.featuredStoryTitle} 
+                onChange={e => updateField('featuredStoryTitle', e.target.value)} 
+                className="w-full bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white p-4 rounded-2xl border border-slate-100 dark:border-slate-700 outline-none focus:border-amber-500 transition-colors" 
+              />
+            </div>
+            <VideoPicker 
+              label="مقطع السنة / فيديو القصة (رابط يوتيوب)" 
+              value={formData.featuredYouTubeUrl || ''} 
+              onChange={v => updateField('featuredYouTubeUrl', v)} 
+            />
+          </div>
+          <ImagePicker label="صورة القصة الرئيسية" value={formData.featuredStoryImage} onChange={v => updateField('featuredStoryImage', v)} />
+        </div>
+        <div className="space-y-1">
+          <label className="block text-xs font-black text-slate-400 mr-2">نص القصة التفصيلي</label>
+          <textarea 
+            rows={6} 
+            value={formData.featuredStoryText} 
+            onChange={e => updateField('featuredStoryText', e.target.value)} 
+            className="w-full bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white p-6 rounded-3xl border border-slate-100 dark:border-slate-700 outline-none focus:border-amber-500 leading-loose transition-colors" 
+            placeholder="نص القصة..." 
           />
         </div>
-        <ImagePicker label="صورة القصة الرئيسية" value={formData.featuredStoryImage} onChange={v => updateField('featuredStoryImage', v)} />
-      </div>
-      <div className="space-y-1">
-        <label className="block text-xs font-black text-slate-400 mr-2">نص القصة التفصيلي</label>
-        <textarea 
-          rows={6} 
-          value={formData.featuredStoryText} 
-          onChange={e => updateField('featuredStoryText', e.target.value)} 
-          className="w-full bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white p-6 rounded-3xl border border-slate-100 dark:border-slate-700 outline-none focus:border-amber-500 leading-loose transition-colors" 
-          placeholder="نص القصة..." 
-        />
-      </div>
+      </section>
       
+      {/* ألبوم الصور */}
       <div className="p-8 bg-slate-50 dark:bg-slate-800/50 rounded-[3rem] border-2 border-dashed border-slate-200 dark:border-slate-700 transition-colors">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
           <div>

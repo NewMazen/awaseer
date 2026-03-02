@@ -2,7 +2,6 @@
 import React, { useRef, useState } from 'react';
 import { AppData } from '../../types';
 import { ImagePicker } from './ImagePicker';
-import { VideoPicker } from './VideoPicker';
 import { dataService } from '../../services/dataService';
 
 interface Props {
@@ -82,14 +81,19 @@ export const QisaMaarad: React.FC<Props> = ({ formData, updateField }) => {
                 className="w-full bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white p-4 rounded-2xl border border-slate-100 dark:border-slate-700 outline-none focus:border-amber-500 transition-colors" 
               />
             </div>
-            <VideoPicker 
-              label="مقطع السنة / فيديو القصة (رابط يوتيوب)" 
+          <div className="space-y-1">
+            <label className="block text-xs font-black text-slate-400 mr-2">رابط يوتيوب (مقطع السنة)</label>
+            <input 
+              type="text" 
               value={formData.featuredYouTubeUrl || ''} 
-              onChange={v => updateField('featuredYouTubeUrl', v)} 
+              onChange={e => updateField('featuredYouTubeUrl', e.target.value)} 
+              className="w-full bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white p-4 rounded-2xl border border-slate-100 dark:border-slate-700 outline-none focus:border-amber-500 transition-colors" 
+              placeholder="https://www.youtube.com/watch?v=..."
             />
           </div>
-          <ImagePicker label="صورة القصة الرئيسية" value={formData.featuredStoryImage} onChange={v => updateField('featuredStoryImage', v)} />
         </div>
+        <ImagePicker label="صورة القصة الرئيسية" value={formData.featuredStoryImage} onChange={v => updateField('featuredStoryImage', v)} />
+      </div>
         <div className="space-y-1">
           <label className="block text-xs font-black text-slate-400 mr-2">نص القصة التفصيلي</label>
           <textarea 
